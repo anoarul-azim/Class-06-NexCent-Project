@@ -1,16 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: var(--font-family);
-}
-:root{
-    -neutral-white: #fff;
+:root {
+    --neutral-white: #fff;
     --neutral-silver: #f5f7fa;
     --neutral-grey-blue: #abbed1;
     --neutral-l-grey: #89939e;
@@ -35,17 +24,21 @@ body{
     --action-error: #e53835;
     --action-warning: #fbc02d;
     --font-family: "Inter", sans-serif;
-    fill: var(--neutral-black);
+    --second-family: "Montserrat", sans-serif;
 }
-
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .container {
     width: 1152px;
     margin: auto;
 }
 
-ul,ol {
+ul,
+ol {
     list-style-type: none;
 }
 
@@ -53,56 +46,646 @@ a {
     text-decoration: none;
 }
 
-.row{
+.row {
     display: flex;
     flex-wrap: wrap;
 }
 
-nav .row{
-    justify-content: space-between;
+
+body {
+    font-family: var(--font-family);
+}
+
+/* =============== CSS NAV START ====================*/
+nav {
+    box-shadow: 3px 3px 30px #77777766;
+}
+
+nav .row {
     align-items: center;
+    justify-content: space-between;
 }
 
-nav .menu ul li{
+nav ul li {
     display: inline-block;
 }
 
-nav .menu ul li a{
-    padding:30px 25px;
+nav ul li:nth-child(1) a {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #18191f;
+}
+nav ul li a {
+    padding: 30px 25px;
     display: inline-block;
+    position: relative;
+
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #18191f;
 }
-
-nav .logo{
-    color:var(--neutral-silver);
+nav .sign_up_btn a{
+    background: var(--brand-primary);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 6px;
 }
+nav .sign_up_btn a:first-child{
+    background: transparent;
+    outline: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
+}
+nav .sign_up_btn a:last-child{
+    color: #fff;
+}
+nav .sign_up_btn a:first-child:hover{
+    background: var(--brand-primary);
+    color: #fff;
+}
+nav .sign_up_btn a:last-child:hover{
+    background: transparent;
+    outline: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
+}
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background: var(--brand-primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+/* =============== CSS NAV END ======================*/
 
-.btn{
+/* =============== CSS HERO START ====================*/
+#hero .contains h3{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 119%;
+    color: var(--neutral-d-grey);
+}
+#hero .contains p{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--neutral-grey);
+}
+#hero .contains a{
     font-family: var(--font-family);
     font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--neutral-white);
+    background: #4CAF4F;
+    padding: 14px 32px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+}
+#hero .contains{
+    width: 60%;
+    padding: 162px 0;
+}
+#hero .row{
+    justify-content: space-between;
+    align-items: center;
+}
+#hero .row .text_clr{
+    color: #4CAF4F;
+}
+#hero .contains a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #2e7d31;
+    /* border-radius: 4px; */
+    left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    top: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+#hero .contains a:hover::after{
+    width: 50%;
+}
+
+
+
+#hero .contains a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #2e7d31;
+    /* border-radius: 4px; */
+    right: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    top: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+#hero .contains a:hover::before{
+    width: 50%;
+}
+
+#hero .slider {
+    text-align: center;
+}
+#hero .slider span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1b5e1f;
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+#hero .slider span:nth-child(2),#hero .slider span:nth-child(3){
+    opacity: 0.5;
+}
+/* =============== CSS HERO END ======================*/
+
+
+/* =============== CSS CLIENT START ====================*/
+#clients .row{
+    padding: 50px 0;
+    justify-content:space-between;
+}
+/* =============== CSS CLIENT END ======================*/
+
+
+#community{
+    padding: 100px 0;
+}
+#community .box{
+    width: calc(33.33% - 84.66px);
+    box-shadow: 0 2px 4px 0 rgba(209, 181, 171, 0.2);
+background: var(--neutral-white);
+text-align: center;
+padding: 24px;
+margin: 0 42.33px;
+
+}
+#community .box h4{
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 28px;
+line-height: 129%;
+text-align: center;
+color: var(--neutral-d-grey);
+}
+#community .box p{
+    font-family: var(--font-family);
+    font-weight: 400;
     font-size: 14px;
     line-height: 143%;
     text-align: center;
-    
-    
+    color: var(--neutral-grey);
+}
+/* #community .contains{
+    padding: 16px 24px 24px 24px;
+} */
+
+
+/*========START=======*/
+#second_box .contains h2{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 122%;
+    color: var(--neutral-d-grey);
+}
+#second_box .contains p{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--neutral-grey);
+}
+#second_box .contains a{
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-align: center;
+color: var(--neutral-white);
+border-radius: 4px;
+padding: 14px 32px;
+width: 151px;
+height: 52px;
+background: var(--brand-primary);
+margin-top: 32px;
+display: inline-block;
 }
 
-.btn-ghosted-btn-sm{
+#second_box .contains{
+    width: 60%;
+}
+#second_box .row{
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+/*=========END========*/
+
+
+/*======== third box START=======*/
+#box_third .contains span{
+    display: block;
     color: var(--brand-primary);
-    border-radius: 6px;
-    padding: 10px 20px;
-    width: 77px;
-    height: 40px;
 }
 
-.btn-btn-sm{
-    border-radius: 6px;
-    padding: 10px 20px; 
-    width: 91px;
-    height: 40px; 
-    background: var(--brand-primary);
-    color: var(--neutral-white);
+#box_third .contains h2{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 122%;
+    color: var(--neutral-d-grey);
 }
+
+
+#box_third .contains p{
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: #18191f;
+}
+#box_third .row{
+    background: var(--neutral-silver);
+   
+}
+
+#box_third .contains,.text_containt{
+    width: 50%;
+  
+}
+
+.text_containt .icon{
+    width: 22%;
+}
+.text_containt .text{
+    width: 78%;
+}
+.text_containt .icon p{
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--neutral-grey);
+}
+.text_containt .icon h3{
+font-weight: 700;
+font-size: 28px;
+line-height: 129%;
+color: var(--neutral-d-grey);
+}
+#box_third .contains{
+    padding-left: 72px;
+    
+}
+.text_containt{
+    padding-bottom: 30px;
+    padding-top: 40px;
+
+}
+
+
+
+/*=========third box END========*/
+
+
+
+
+/*========fourth START=======*/
+
+#fourth_box .contains h2{
+font-weight: 600;
+font-size: 36px;
+line-height: 122%;
+color: var(--neutral-d-grey);
+}
+#fourth_box .contains p{
+font-weight: 400;
+font-size: 14px;
+line-height: 143%;
+color: var(--neutral-grey);
+padding-top: 16px;
+}
+#fourth_box .contains a{
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-align: center;
+color: var(--neutral-white);
+border-radius: 4px;
+padding: 14px 32px;
+width: 151px;
+height: 52px;
+display: inline-block;
+margin-top: 32px;
+background: var(--brand-primary);
+}
+#fourth_box .row{
+justify-content: space-between;
+align-items: center;
+padding-top: 48px;
+padding-bottom: 48px;
+}
+#fourth_box .contains{
+    width: 60%;
+    
+}
+
+/*=========fourth END========*/
+
+/*======== five box START=======*/
+
+#five_box .contains{
+    width: 60%;
+}
+#five_box .contains p{
+    
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: var(--neutral-grey);
+padding-top: 32px;
+}
+
+#five_box .contains h4{
+font-weight: 600;
+font-size: 20px;
+line-height: 140%;
+color: var(--brand-primary);
+padding-top: 16px;
+
+}
+#five_box .bro{
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--neutral-l-grey);
+padding-bottom: 32px;
+}
+
+#five_box .row{
+   padding-bottom: 32px;
+    justify-content: space-between;
+    background: var(--neutral-silver);
+}
+
+#five_box .row a{
+font-weight: 600;
+font-size: 20px;
+line-height: 140%;
+color: var(--brand-primary);
+}
+
+
+
+
+/*=========five box END========*/
+
+
+/*======== heading2 START=======*/
+
+
+#head2 .row h2{
+font-weight: 600;
+font-size: 36px;
+line-height: 122%;
+text-align: center;
+color: var(--neutral-d-grey);
+margin-left: 350px;
+}
+#head2 .row p{
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+text-align: center;
+color: var(--neutral-grey);
+margin-top: 8px;
+}
+#head2 .row{
+    padding-top: 48px;
+  
+}
+
+
+/*========= heading2 END========*/
+
+
+
+
+/*========six box START=======*/
+
+#six_box{
+    padding: 16px 0 68.6px;
+   
+}
+
+.box2{
+    width: calc(33.33% - 24px);
+    position: relative;
+
+}
+#six_box .row{
+    justify-content: space-between;
+}
+
+.box2 img{
+    width: 100%;
+}
+
+.overlay{
+    position: absolute;
+bottom: 0;
+transform: translateY(50%);
+left: 25.5px;
+right: 25.5px;
+box-shadow: 0 8px 16px 0 rgba(171, 190, 209, 0.4);
+background: var(--neutral-silver);
+padding: 16px 16px;
+border-radius: 8px;
+padding: 16px;
+width: 317px;
+height: 176px;
+
+}
+.overlay h4{
+  
+font-weight: 600;
+font-size: 20px;
+line-height: 140%;
+text-align: center;
+color: var(--neutral-grey);
+}
+.overlay a{
+   
+font-weight: 600;
+font-size: 20px;
+line-height: 140%;
+color: var(--brand-primary);
+padding-left: 77px;
+}
+/*========= six box END========*/
+
+
+/*========START=======*/
+#last .row{
+    background: var(--neutral-silver);
+}
+#last{
+ padding-top: 68.6px;
+
+}
+#last .row h1{
+   
+font-weight: 600;
+font-size: 64px;
+line-height: 119%;
+text-align: center;
+color: var(--neutral-black);
+margin: 0px 216.5px;
+}
+#last .row a{
+    color: white;
+    font-family: var(--font-family);
+}
+
+#last .row .arrow{
+    border-radius: 4px;
+padding: 14px 32px;
+width: 178px;
+height: 52px;
+background: var(--brand-primary);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: var(--neutral-white);
+margin-bottom: 32px;
+margin-left: 500px;
+}
+
+/*=========END========*/
+
+
+
+
+
+
+
+ /*========black box START=======*/
+ 
+ 
+#last_bro .row{
+    background: var(--neutral-black);
+   padding: 0px 41px;
+width: 1148px;
+align-items: center;
+}
+
+
+#last_bro .box{
+    width: 30%;
+margin: 64px 82px;
+
+}
+#last_bro .images{
+    padding: 20px;
+}
+#last_bro .images img{
+    padding: 6px;
+ 
+}
+
+
+#last_bro .box p{
+margin-top: 20px;
+font-weight: 400;
+font-size: 14px;
+line-height: 143%;
+color: var(--neutral-silver);
+}
+ /*=========END========*/
+
+
+
+/*========START=======*/
+#last_bro .box2{
+    width: 15%;
+}
+#last_bro .box2 ul li{
+font-weight: 400;
+font-size: 14px;
+line-height: 143%;
+color: var(--neutral-silver);
+padding: 12px;
+}
+#last_bro .box2 ul li h4{
+    padding-bottom: 24px;
+}
+
+/*=========END========*/
+
+/*========START=======*/
+#last_bro .box3{
+width: 24%;
+}
+#last_bro .box3 input{
+    border-radius: 8px;
+width: 255px;
+height: 40px;
+background: var(--neutral-white);
+opacity: 0.2;
+    padding: 10px;
+
+}
+#last_bro .box3 button{
+    border: none;
+background: transparent;
+position: absolute;
+margin-top: 10.5px;
+margin-left: -30px;
+
+
+
+}
+#last_bro .box3 h4{
+font-weight: 600;
+font-size: 20px;
+line-height: 140%;
+color: var(--neutral-white);
+}
+
+#last_bro .box3 input
+{
+    color: white;
+}
+/*========= black box END========*/
